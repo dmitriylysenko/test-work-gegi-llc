@@ -1,23 +1,27 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: dmitriy
+ * Date: 24.05.19
+ * Time: 2:33
+ */
 
 namespace App;
 
-class SchoolApplications
-{
 
+abstract class School
+{
     protected $months;
     protected $schoolData;
 
-    /**
-     * SchoolApplications constructor.
-     */
     public function __construct()
     {
-        $response = json_decode(file_get_contents(storage_path('app/data.json')), true);
+        $response = $this->getContent();
 
         $this->months     = $response['Columns'];
         $this->schoolData = $response['Rows'];
     }
+
 
     /**
      * @return mixed
@@ -34,4 +38,9 @@ class SchoolApplications
     {
         return $this->schoolData;
     }
+
+    /**
+     * @return mixed
+     */
+    abstract protected function getContent();
 }

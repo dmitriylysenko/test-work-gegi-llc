@@ -18,13 +18,12 @@
 <div id="container" style="width:100%; height:400px;">
 
     <div id="chart"></div>
-
+    @include('applications.links')
     {!! $chart !!}
 
 </div>
 
 <script src="../js/app.js"></script>
-<script src="../js/chart.js"></script>
 </body>
 </html>
 

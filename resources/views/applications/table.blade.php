@@ -18,7 +18,9 @@
 
 
 <div class="limiter">
+
     <div class="container-table100">
+        @include('applications.links')
         <div class="wrap-table100">
             <div class="table">
 
@@ -50,7 +52,7 @@
 </div>
 
 
-<script src="js/app.js"></script>
+<script src="../js/app.js"></script>
 </body>
 </html>
 
